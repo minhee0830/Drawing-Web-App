@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tools {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.tool-group {
+    display: flex;
+    gap: 10px;
+}
+
+.tool-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tool-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.tool-btn.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#colorPicker {
+    width: 50px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sizeSlider {
+    width: 150px;
+}
+
+#drawingCanvas {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: crosshair;
+} 
