@@ -19,11 +19,9 @@ HTML5 Canvas와 JavaScript를 활용한 간단한 드로잉 웹앱입니다.
 
 ## 📸 실행 화면
 
-> 아래에 실행 화면 캡처 이미지를 넣어주세요!
+## 📸 실행 화면
 
-```html
-<img src="./screenshot.png" alt="실행 화면 예시">
-```
+![실행 화면 예시](./screenshot.png)
 
 ---
 
