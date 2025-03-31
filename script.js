@@ -40,6 +40,54 @@ document.getElementById('clear').addEventListener('click', () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
+// 이미지 저장
+document.getElementById('save').addEventListener('click', () => {
+    // 새 탭에서 이미지 열기
+    const image = canvas.toDataURL('image/png');
+    const newWindow = window.open();
+    newWindow.document.write(`
+        <html>
+            <head>
+                <title>그림 저장</title>
+                <style>
+                    body { 
+                        display: flex; 
+                        flex-direction: column; 
+                        align-items: center; 
+                        justify-content: center; 
+                        height: 100vh; 
+                        margin: 0; 
+                        background: #f0f0f0; 
+                        font-family: Arial, sans-serif;
+                    }
+                    img { 
+                        max-width: 100%; 
+                        max-height: 80vh; 
+                        margin-bottom: 20px;
+                    }
+                    .instructions {
+                        text-align: center;
+                        margin-bottom: 20px;
+                        padding: 10px;
+                        background: white;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="instructions">
+                    <h2>이미지를 저장하는 방법</h2>
+                    <p>1. 이미지 위에서 마우스 오른쪽 버튼을 클릭하세요</p>
+                    <p>2. "이미지를 다른 이름으로 저장" 또는 "Save image as"를 선택하세요</p>
+                    <p>3. 원하는 위치와 파일명을 선택하고 저장하세요</p>
+                </div>
+                <img src="${image}" alt="그림">
+            </body>
+        </html>
+    `);
+});
+
 // 마우스 이벤트
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mousemove', draw);
